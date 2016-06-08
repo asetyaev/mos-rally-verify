@@ -3,5 +3,5 @@ sed -i 's|#swift_operator_role = Member|swift_operator_role = SwiftOperator|g' /
 source /home/rally/openrc
 rally-manage db recreate
 rally deployment create --fromenv --name=tempest 
-rally verify install --version 63cb9a3718f394c9da8e0cc04b170ca2a8196ec2
+rally verify install --version d05a3c26cd1b492c0466737972ea05d339f224d6
 rally verify genconfig
