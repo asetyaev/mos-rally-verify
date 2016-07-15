@@ -7,15 +7,9 @@ Steps:
 
 Done
 
-
+example:
 ./run_tempest.sh - run all test
-./run_tempest.sh "--regex <test>"
-
-<test> example:
-tempest.api.identity
-tempest.api.identity.admin.test_roles
-tempest.api.identity.admin.test_roles.RolesTestJSON
-tempest.api.identity.admin.test_roles.RolesTestJSON.test_list_roles
+./run_tempest.sh "--regex tempest.api.image"
 
 Result:
 
