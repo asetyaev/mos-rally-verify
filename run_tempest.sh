@@ -34,7 +34,7 @@ function prepare {
 function install_docker_and_run {
     docker pull rallyforge/rally:latest
     image_id=$(docker images | grep latest| awk '{print $3}')
-    docker run --net host -v /home/:/home/rally -tid -u root $image_id
+    docker run --net host -v /home/:/home/vagrant/rally -tid -u root $image_id
     docker_id=$(docker ps | grep $image_id | awk '{print $1}'| head -1)
 }
 
