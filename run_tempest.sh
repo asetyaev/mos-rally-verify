@@ -28,7 +28,7 @@ function prepare {
 	  export NEUTRON_ENDPOINT_TYPE='internalURL'
 	  export OS_ENDPOINT_TYPE='internalURL'
 	  export MURANO_REPO_URL='http://storage.apps.openstack.org/'
-	  export MURANO_PACKAGES_SERVICE='glance" > /home/vagrant/rally/openrc
+	  export MURANO_PACKAGES_SERVICE='glance'" > /home/vagrant/rally/openrc
 }
 
 function install_docker_and_run {
