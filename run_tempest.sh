@@ -11,8 +11,7 @@ function prepare {
           rally verify showconfig" > /home/vagrant/rally/install_tempest.sh
     chmod +x /home/vagrant/rally/install_tempest.sh
     keystone_ip=$(kubectl get services |grep keystone |awk {'print$2'})
-    echo "#!/bin/sh
-          export OS_NO_CACHE='true'
+    echo "export OS_NO_CACHE='true'
 	  export OS_TENANT_NAME='admin'
 	  export OS_PROJECT_NAME='admin'
 	  export OS_USERNAME='admin'
@@ -33,7 +32,7 @@ function prepare {
 
 function install_docker_and_run {
     docker pull rallyforge/rally:latest
-    image_id=$(docker images | grep latest| awk '{print $3}')
+    image_id=$(docker images | grep rally| awk '{print $3}')
     docker run --net host -v /home/:/home/vagrant/rally -tid -u root $image_id
     docker_id=$(docker ps | grep $image_id | awk '{print $1}'| head -1)
 }
