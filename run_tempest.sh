@@ -10,12 +10,12 @@ function prepare {
           rally verify genconfig
           rally verify showconfig" > /home/vagrant/rally/install_tempest.sh
     chmod +x /home/vagrant/rally/install_tempest.sh
-    keystone_ip=$(kubectl get services |grep keystone |awk {'print$2'})
+    keystone_ip=$(kubectl get services —namespace demo |grep keystone |awk {'print$2'})
     echo "export OS_NO_CACHE='true'
 	  export OS_TENANT_NAME='admin'
 	  export OS_PROJECT_NAME='admin'
 	  export OS_USERNAME='admin'
-	  export OS_PASSWORD='admin'
+	  export OS_PASSWORD='password'
 	  export OS_AUTH_URL='http://$keystone_ip:5000/v2.0'
 	  export OS_DEFAULT_DOMAIN='Default'
 	  export OS_AUTH_STRATEGY='keystone'
