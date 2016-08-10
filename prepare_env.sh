@@ -46,11 +46,6 @@ function configure_tempest {
         sed -e $N"s/^/max_template_size = 5440000\n/" -i $tconf
     fi
     
-    node_compute_count=$(nova hypervisor-list |grep test.domain.local |wc -l)
-    if [ "$node_compute_count" -gt 1]; then
-        sed -i 's|#live_migration = False|live_migration = True|g' $tconf
-    fi
-
     N=$(grep -n "\[compute\]" $tconf | cut -d':' -f1)
     N=$(($N+1))
     sed -e $N"s/^/volume_device_name = vdc\n/" -i $tconf
