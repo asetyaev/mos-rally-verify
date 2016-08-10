@@ -9,7 +9,7 @@ Done
 
 example:
 ./run_tempest.sh - run all test
-./run_tempest.sh "--regex tempest.api.image"
+./run_tempest.sh "--regex tempest.api.image" - run test for glance
 
 Result:
 
